@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DR!P MEDISPA | Where Wellness Meets Beauty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Great+Vibes&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'drip-dark': '#1b3a4b',
+            'drip-teal': '#3d8ea6',
+            'drip-light': '#f7f7f7',
+            'drip-text': '#1a1a1a',
+            'drip-gray': '#666666',
+          },
+          fontFamily: {
+            'display': ['"Cormorant Garamond"', 'serif'],
+            'script': ['"Great Vibes"', 'cursive'],
+            'body': ['"Work Sans"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Work Sans', sans-serif; color: #1a1a1a; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #3d8ea6;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu { display: none; }
+    .testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .btn-teal {
+      background-color: #3d8ea6;
+      color: #fff;
+      padding: 12px 32px;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+    }
+    .btn-teal:hover { background-color: #357d94; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 14px 40px;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    .btn-outline:hover { background-color: rgba(255,255,255,0.1); }
+    .btn-outline-dark {
+      border: 1px solid #1b3a4b;
+      color: #1b3a4b;
+      padding: 12px 32px;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-dark:hover { background-color: #1b3a4b; color: #fff; }
+    .ig-card { transition: transform 0.3s ease; }
+    .ig-card:hover { transform: scale(1.03); }
+    .service-item { transition: color 0.3s ease; }
+    .service-item:hover { color: #3d8ea6; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+    .mobile-menu { display: none; }
+    @media (max-width: 1024px) {
+      .desktop-nav { display: none; }
+      .mobile-menu-btn { display: flex !important; }
+    }
+    @media (min-width: 1025px) {
+      .mobile-menu-btn { display: none !important; }
+    }
+  </style>
+</head>
+<body class="font-body">
+
+  <!-- ========== FIXED NAVIGATION ========== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-drip-dark" style="background-color: #1b3a4b;">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex-shrink-0">
+          <span class="font-display text-white text-2xl font-bold tracking-wider">DR<span class="text-drip-teal" style="color:#3d8ea6;">!</span>P MEDISPA</span>
+        </a>
+
+        <!-- Center Nav Links (Desktop) -->
+        <div class="desktop-nav hidden lg:flex items-center space-x-6 xl:space-x-7">
+          <a href="index.html" class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors">Home</a>
+          <a href="memberships.html" class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors">Memberships</a>
+
+          <div class="dropdown relative">
+            <button class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors flex items-center gap-1">
+              Cosmetic
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-sm py-2 z-50">
+              <a href="wrinkle-relaxers.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Wrinkle Relaxers</a>
+              <a href="wrinkle-relaxers.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Dermal Fillers</a>
+              <a href="wrinkle-relaxers.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Facial Balancing</a>
+            </div>
+          </div>
+
+          <div class="dropdown relative">
+            <button class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors flex items-center gap-1">
+              Wellness
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-sm py-2 z-50">
+              <a href="laser-hair-removal.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">IV Therapy</a>
+              <a href="laser-hair-removal.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Wellness Treatments</a>
+            </div>
+          </div>
+
+          <div class="dropdown relative">
+            <button class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors flex items-center gap-1">
+              Skin
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-sm py-2 z-50">
+              <a href="laser-hair-removal.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Laser Hair Removal</a>
+              <a href="laser-hair-removal.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Chemical Peels</a>
+              <a href="laser-hair-removal.html" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Microneedling</a>
+            </div>
+          </div>
+
+          <div class="dropdown relative">
+            <button class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors flex items-center gap-1">
+              Beauty
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-sm py-2 z-50">
+              <a href="#" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Lashes</a>
+              <a href="#" class="block px-5 py-2.5 text-xs tracking-widest uppercase text-drip-text hover:bg-drip-light hover:text-drip-teal transition-colors">Brows</a>
+            </div>
+          </div>
+
+          <a href="#" class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors">Gift Cards</a>
+          <a href="about.html" class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors">About Us</a>
+          <a href="#" class="nav-link text-white text-xs font-medium tracking-widest uppercase hover:text-drip-teal transition-colors">Payment Plans</a>
+        </div>
+
+        <!-- Right: Social + Book Now -->
+        <div class="flex items-center space-x-4">
+          <div class="hidden lg:flex items-center space-x-3">
+            <a href="#" class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="btn-teal font-body tracking-widest text-xs uppercase hidden sm:inline-block" style="padding: 10px 24px;">Book Now</a>
+
+          <!-- Mobile Menu Button -->
+          <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="mobile-menu-btn flex items-center justify-center w-10 h-10 text-white lg:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-drip-dark border-t border-white/10 pb-6">
+      <div class="px-6 pt-4 space-y-3">
+        <a href="index.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Home</a>
+        <a href="memberships.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Memberships</a>
+        <a href="wrinkle-relaxers.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Cosmetic</a>
+        <a href="laser-hair-removal.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Wellness</a>
+        <a href="laser-hair-removal.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Skin</a>
+        <a href="#" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Beauty</a>
+        <a href="#" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Gift Cards</a>
+        <a href="about.html" class="block text-white text-xs font-medium tracking-widest uppercase py-2">About Us</a>
+        <a href="#" class="block text-white text-xs font-medium tracking-widest uppercase py-2">Payment Plans</a>
+        <a href="#" class="btn-teal inline-block mt-4 text-center tracking-widest text-xs uppercase">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="relative min-h-screen flex items-center justify-center" style="margin-top: 0;">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b0?w=1920&q=80" alt="Drip MedSpa Hero" class="w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(27,58,75,0.75), rgba(27,58,75,0.85));"></div>
+    </div>
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto fade-in-up">
+      <p class="font-script text-white text-4xl md:text-5xl mb-4" style="color: #3d8ea6;">The Drip Experience</p>
+      <h1 class="font-display text-white text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider leading-tight mb-6">Where Wellness Meets Beauty</h1>
+      <p class="font-body text-white/80 text-base md:text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">Redefining the med spa experience with intentional care, advanced techniques, and a commitment to helping you look and feel your absolute best.</p>
+      <a href="#" class="btn-outline inline-block font-body uppercase">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ========== BOUTIQUE MEDI SPA SECTION ========== -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-drip-teal text-xs font-medium tracking-[4px] uppercase mb-6" style="color:#3d8ea6;">Our Signature Approach</p>
+      <h2 class="font-display text-drip-text text-3xl md:text-5xl font-bold uppercase tracking-wider mb-8">New Jersey's First Boutique Medi Spa</h2>
+      <p class="font-body text-drip-gray text-base md:text-lg font-light leading-relaxed">At Drip MedSpa, we believe beauty is deeply personal. That's why every treatment plan is tailored specifically to you. Our boutique approach means smaller client volumes, longer appointment times, and undivided attention from our expert team. We combine cutting-edge cosmetic treatments with holistic wellness services to deliver results that look natural and feel incredible.</p>
+    </div>
+  </section>
+
+  <!-- ========== COSMETIC SERVICES CARD ========== -->
+  <section class="py-16 md:py-24 bg-drip-light" style="background-color:#f7f7f7;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-0 bg-white shadow-lg overflow-hidden">
+        <!-- Image -->
+        <div class="h-80 md:h-auto">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Cosmetic Services" class="w-full h-full object-cover">
+        </div>
+        <!-- Content -->
+        <div class="p-10 md:p-14 lg:p-16 flex flex-col justify-center">
+          <p class="text-drip-teal text-xs font-medium tracking-[4px] uppercase mb-4" style="color:#3d8ea6;">Cosmetic</p>
+          <h3 class="font-display text-drip-text text-2xl md:text-3xl font-bold uppercase tracking-wider mb-5">Enhance Your Natural Beauty</h3>
+          <p class="font-body text-drip-gray text-sm font-light leading-relaxed mb-8">Our cosmetic treatments are designed to enhance your natural features with precision and artistry. Every procedure is performed by highly trained professionals committed to safe, beautiful results.</p>
+          <ul class="space-y-3 mb-10">
+            <li class="service-item text-drip-text text-xs font-medium tracking-[3px] uppercase cursor-pointer flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-drip-teal flex-shrink-0" style="background-color:#3d8ea6;"></span>
+              Wrinkle Relaxers
+            </li>
+            <li class="service-item text-drip-text text-xs font-medium tracking-[3px] uppercase cursor-pointer flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-drip-teal flex-shrink-0" style="background-color:#3d8ea6;"></span>
+              Dermal Fillers
+            </li>
+            <li class="service-item text-drip-text text-xs font-medium tracking-[3px] uppercase cursor-pointer flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-drip-teal flex-shrink-0" style="background-color:#3d8ea6;"></span>
+              Facial Balancing
+            </li>
+            <li class="service-item text-drip-text text-xs font-medium tracking-[3px] uppercase cursor-pointer flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-drip-teal flex-shrink-0" style="background-color:#3d8ea6;"></span>
+              Regenerative Aesthetics
+            </li>
+          </ul>
+          <div>
+            <a href="wrinkle-relaxers.html" class="btn-outline-dark inline-block font-body uppercase">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTENTIONAL CARE SECTION ========== -->
+  <section class="py-24 md:py-32" style="background-color:#1b3a4b;">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-display text-white text-3xl md:text-5xl font-bold uppercase tracking-wider mb-6">Intentional Care. Exceptional Results.</h2>
+      <p class="font-body text-white/70 text-base md:text-lg font-light max-w-2xl mx-auto mb-16 leading-relaxed">We take a boutique approach to every service, ensuring personalized attention and the highest standard of care for every single client.</p>
+
+      <div class="grid md:grid-cols-3 gap-12 md:gap-8">
+        <!-- Column 1 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-white/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-drip-teal" style="color:#3d8ea6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="font-display text-white text-xl font-bold uppercase tracking-wider mb-4">Our Clients</h3>
+          <p class="font-body text-white/60 text-sm font-light leading-relaxed">Every client is treated as an individual. We listen, assess, and create customized treatment plans that align with your unique goals and anatomy.</p>
+        </div>
+        <!-- Column 2 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-white/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-drip-teal" style="color:#3d8ea6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-display text-white text-xl font-bold uppercase tracking-wider mb-4">Safe Techniques</h3>
+          <p class="font-body text-white/60 text-sm font-light leading-relaxed">Safety is at the core of everything we do. Our team follows the most rigorous protocols and uses only FDA-approved products and state-of-the-art equipment.</p>
+        </div>
+        <!-- Column 3 -->
+        <div class="text-center">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-full border border-white/20 flex items-center justify-center">
+            <svg class="w-8 h-8 text-drip-teal" style="color:#3d8ea6;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="font-display text-white text-xl font-bold uppercase tracking-wider mb-4">Advanced Procedures</h3>
+          <p class="font-body text-white/60 text-sm font-light leading-relaxed">We stay at the forefront of aesthetic innovation, offering the latest and most effective treatments backed by science and proven results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DRIP BELIEVES IN BETTER ========== -->
+  <section class="relative bg-white">
+    <div class="w-full h-1" style="background-color:#3d8ea6;"></div>
+    <div class="py-24 md:py-32 max-w-3xl mx-auto px-6 text-center">
+      <p class="font-script text-4xl mb-4" style="color:#3d8ea6;">Our Promise</p>
+      <h2 class="font-display text-drip-text text-3xl md:text-5xl font-bold uppercase tracking-wider mb-8">Drip Believes in Better</h2>
+      <p class="font-body text-drip-gray text-base md:text-lg font-light leading-relaxed">We believe in better products, better techniques, and better outcomes. At Drip MedSpa, mediocrity is never an option. From the moment you walk through our doors, you'll experience a level of care and attention that goes beyond the ordinary. We invest in continuing education, premium-grade products, and the most advanced technology so that you can always expect extraordinary results.</p>
+    </div>
+  </section>
+
+  <!-- ========== MEET THE DRIP DOLLS ========== -->
+  <section class="py-24 md:py-32" style="background-color:#f7f7f7;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div>
+          <p class="text-drip-teal text-xs font-medium tracking-[4px] uppercase mb-4" style="color:#3d8ea6;">About Us</p>
+          <h2 class="font-display text-drip-text text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wider mb-6">Meet the Drip Dolls&trade;</h2>
+          <p class="font-body text-drip-gray text-base font-light leading-relaxed mb-8">Our team of highly skilled nurse practitioners and aestheticians are the heart and soul of Drip MedSpa. Known lovingly as the "Drip Dolls," each team member brings years of specialized training, a passion for aesthetics, and a genuine commitment to your well-being. We don't just perform treatments -- we build lasting relationships with our clients.</p>
+          <a href="about.html" class="btn-outline-dark inline-block font-body uppercase">Meet the Team</a>
+        </div>
+        <!-- Right Script -->
+        <div class="text-center md:text-right">
+          <p class="font-script text-6xl md:text-7xl lg:text-8xl" style="color:#3d8ea6;">Your beauty team</p>
+          <div class="mt-8">
+            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=600&q=80" alt="The Drip Dolls Team" class="w-full max-w-md mx-auto md:ml-auto md:mr-0 rounded-sm shadow-lg object-cover" style="height: 350px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INSTAGRAM SECTION ========== -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="font-script text-4xl mb-4" style="color:#3d8ea6;">Socials</p>
+      <h2 class="font-display text-drip-text text-2xl md:text-4xl font-bold uppercase tracking-wider mb-14">Follow Us for Your Daily Dose of Drip</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <a href="#" class="ig-card block aspect-square overflow-hidden rounded-sm">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=80" alt="Instagram" class="w-full h-full object-cover">
+        </a>
+        <a href="#" class="ig-card block aspect-square overflow-hidden rounded-sm">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&q=80" alt="Instagram" class="w-full h-full object-cover">
+        </a>
+        <a href="#" class="ig-card block aspect-square overflow-hidden rounded-sm">
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80" alt="Instagram" class="w-full h-full object-cover">
+        </a>
+        <a href="#" class="ig-card block aspect-square overflow-hidden rounded-sm">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80" alt="Instagram" class="w-full h-full object-cover">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="py-24 md:py-32" style="background-color:#f7f7f7;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="font-script text-4xl mb-4" style="color:#3d8ea6;">Testimonials</p>
+        <h2 class="font-display text-drip-text text-3xl md:text-4xl font-bold uppercase tracking-wider">Experience the Drip Difference</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card bg-white p-10 rounded-sm shadow-sm">
+          <div class="flex mb-4">
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="font-body text-drip-gray text-sm font-light leading-relaxed mb-6">"The team at Drip MedSpa is absolutely incredible. They took the time to understand exactly what I wanted and delivered results beyond my expectations. I've never felt more confident!"</p>
+          <p class="font-display text-drip-text text-sm font-bold uppercase tracking-wider">-- Sarah M.</p>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card bg-white p-10 rounded-sm shadow-sm">
+          <div class="flex mb-4">
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="font-body text-drip-gray text-sm font-light leading-relaxed mb-6">"I was nervous about my first filler appointment, but the Drip Dolls made me feel so comfortable and at ease. The results are so natural -- everyone keeps asking what my secret is!"</p>
+          <p class="font-display text-drip-text text-sm font-bold uppercase tracking-wider">-- Jessica L.</p>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card bg-white p-10 rounded-sm shadow-sm">
+          <div class="flex mb-4">
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 text-drip-teal" style="color:#3d8ea6;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="font-body text-drip-gray text-sm font-light leading-relaxed mb-6">"Drip MedSpa is hands down the best med spa in New Jersey. The atmosphere is luxurious, the staff is knowledgeable, and the results speak for themselves. I'm a client for life!"</p>
+          <p class="font-display text-drip-text text-sm font-bold uppercase tracking-wider">-- Amanda R.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="py-24 md:py-32" style="background-color:#1b3a4b;">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-white text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider mb-10">Confidence Starts Here.</h2>
+      <a href="#" class="btn-teal inline-block font-body uppercase text-sm tracking-widest" style="padding: 16px 48px;">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer style="background-color:#1b3a4b;">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-3 gap-12 md:gap-8">
+        <!-- Left: Logo -->
+        <div>
+          <a href="index.html" class="inline-block mb-6">
+            <span class="font-display text-white text-2xl font-bold tracking-wider">DR<span style="color:#3d8ea6;">!</span>P MEDISPA</span>
+          </a>
+          <p class="font-body text-white/50 text-sm font-light leading-relaxed mb-6">New Jersey's first boutique medi spa. Where wellness meets beauty in an atmosphere of luxury and intentional care.</p>
+          <div class="flex items-center space-x-3">
+            <a href="#" class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:border-drip-teal transition-colors">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Address + Hours -->
+        <div>
+          <h4 class="font-display text-white text-lg font-bold uppercase tracking-wider mb-6">Visit Us</h4>
+          <div class="space-y-4">
+            <div>
+              <p class="font-body text-white/50 text-sm font-light">123 Main Street, Suite 200</p>
+              <p class="font-body text-white/50 text-sm font-light">Montclair, NJ 07042</p>
+            </div>
+            <div>
+              <p class="font-body text-white/50 text-sm font-light">info@dripmedispa.com</p>
+              <p class="font-body text-white/50 text-sm font-light">(973) 555-DRIP</p>
+            </div>
+            <div class="pt-2">
+              <p class="font-body text-white/70 text-xs font-medium uppercase tracking-wider mb-2">Operating Hours</p>
+              <p class="font-body text-white/50 text-sm font-light">Mon - Fri: 9:00 AM - 7:00 PM</p>
+              <p class="font-body text-white/50 text-sm font-light">Saturday: 9:00 AM - 5:00 PM</p>
+              <p class="font-body text-white/50 text-sm font-light">Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Newsletter -->
+        <div>
+          <h4 class="font-display text-white text-lg font-bold uppercase tracking-wider mb-6">Get the Drip News</h4>
+          <p class="font-body text-white/50 text-sm font-light leading-relaxed mb-6">Subscribe for exclusive offers, beauty tips, and be the first to know about our latest treatments.</p>
+          <form class="space-y-3" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Enter your email" class="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-3 text-sm font-light focus:outline-none focus:border-drip-teal transition-colors rounded-sm">
+            <button type="submit" class="btn-teal w-full font-body uppercase text-xs tracking-widest rounded-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-body text-white/40 text-xs font-light">&copy; 2026 DR!P MEDISPA. All rights reserved.</p>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="font-body text-white/40 text-xs font-light hover:text-white/70 transition-colors">Privacy Policy</a>
+          <a href="#" class="font-body text-white/40 text-xs font-light hover:text-white/70 transition-colors">Terms of Service</a>
+          <a href="#" class="font-body text-white/40 text-xs font-light hover:text-white/70 transition-colors">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
