@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,11 +83,11 @@
     }
     .fade-in-up { animation: fadeInUp 0.8s ease forwards; }
     .mobile-menu { display: none; }
-    @media (max-width: 1024px) {
-      .desktop-nav { display: none; }
+    @media (max-width: 1023px) {
+      .desktop-nav { display: none !important; }
       .mobile-menu-btn { display: flex !important; }
     }
-    @media (min-width: 1025px) {
+    @media (min-width: 1024px) {
       .mobile-menu-btn { display: none !important; }
     }
   </style>

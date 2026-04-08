@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,11 +81,11 @@
     }
     .fade-in-up { animation: fadeInUp 0.8s ease forwards; }
     .mobile-menu { display: none; }
-    @media (max-width: 1024px) {
-      .desktop-nav { display: none; }
+    @media (max-width: 1023px) {
+      .desktop-nav { display: none !important; }
       .mobile-menu-btn { display: flex !important; }
     }
-    @media (min-width: 1025px) {
+    @media (min-width: 1024px) {
       .mobile-menu-btn { display: none !important; }
     }
     .accordion-content {
@@ -161,10 +161,10 @@
   </nav>
 
   <!-- ========== HERO SECTION ========== -->
-  <section class="relative min-h-screen flex items-end" style="margin-top: 0;">
+  <section class="relative min-h-screen flex items-end" style="margin-top: 0; background: linear-gradient(135deg, #1b3a4b 0%, #0d2633 50%, #1b3a4b 100%);">
     <div class="absolute inset-0 z-0">
       <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1920&q=80" alt="Wrinkle Relaxers Treatment" class="w-full h-full object-cover object-top">
-      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(27,58,75,0.9) 0%, rgba(27,58,75,0.5) 35%, rgba(0,0,0,0.1) 70%, transparent 100%);"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(27,58,75,0.7) 0%, rgba(27,58,75,0.35) 35%, rgba(0,0,0,0.05) 70%, transparent 100%);"></div>
     </div>
     <div class="relative z-10 px-6 md:px-12 lg:px-20 pb-20 md:pb-28 max-w-4xl fade-in-up">
       <p class="font-body text-drip-teal text-xs font-medium tracking-widest uppercase mb-4" style="color:#3d8ea6;">Cosmetic</p>
